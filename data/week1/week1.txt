@@ -1,0 +1,106 @@
+Ciao Lorenzo,
+
+per questa prima settimana inizieremo a lavorare su un piccolo esercizio di metadata ingestion, con l'obiettivo di prendere confidenza con Python e con lo sviluppo di semplici servizi backend.
+
+Non è necessario preoccuparsi fin da subito dell'applicazione completa. Procederemo per piccoli passi e, per questa settimana, l'obiettivo principale è capire i dati che riceviamo, leggerli con Python, trasformarli in un formato comune e iniziare a esporli attraverso una semplice API.
+
+Ti invierò insieme a questa email alcuni file di esempio:
+
+sample_metadata.csv
+sample_metadata.json
+canonical_model.schema.json
+canonical_example.json
+Contesto dell'esercizio
+Immaginiamo di dover ricevere dati relativi a oggetti provenienti da diverse collezioni. Questi dati potrebbero arrivare in formati differenti, ad esempio CSV o JSON, e potrebbero utilizzare strutture o nomi dei campi diversi.
+
+Il compito di un componente di ingestion è prendere questi dati in ingresso, leggerli, verificarli e trasformarli in una struttura comune che il resto dell'applicazione possa utilizzare.
+
+Il flusso che inizieremo a costruire è quindi:
+
+File sorgente → Lettura → Validazione → Trasformazione → Modello canonico → API
+
+Cos'è il modello canonico?
+Il canonical model è semplicemente il formato comune che decidiamo di utilizzare internamente.
+
+Ad esempio, una sorgente potrebbe utilizzare campi come: inventory_number, title, material, date, location
+
+ma, dopo l'ingestion, vogliamo che tutti i dati seguano sempre la stessa struttura.
+
+Non dovrai progettare questo modello: troverai già la sua definizione in canonical_model.schema.json e un record di esempio in canonical_example.json.
+
+Prima di iniziare a programmare, dedica quindi un po' di tempo a confrontare:
+
+sample metadata → canonical example
+
+e cerca di capire quali campi della sorgente corrispondono ai campi del modello canonico.
+
+Attività della settimana
+Ti suggerisco di procedere nell'ordine seguente, passando al punto successivo quando quello precedente funziona correttamente.
+
+1. Preparazione dell'ambiente Python
+
+Configura Python in VS Code, crea un ambiente virtuale per il progetto e prova ad eseguire un semplice programma Python.
+
+Per gli ambienti virtuali puoi partire dalla documentazione ufficiale Python:
+Python – Virtual Environments and Packages Python documentation
+
+2. Lettura e comprensione dei sample metadata
+
+Apri prima manualmente i file CSV e JSON per capirne la struttura.
+
+Successivamente crea un piccolo programma Python in grado di:
+
+leggere sample_metadata.json;
+leggere sample_metadata.csv;
+mostrare a terminale i record letti.
+In questa fase concentrati soprattutto su liste, dizionari, funzioni, gestione dei file e moduli Python json e csv.
+
+3. Trasformazione nel canonical model
+
+Crea una funzione Python che riceva un record sorgente e restituisca il record corrispondente nel formato del canonical model.
+
+Inizia con un solo record. Quando funziona correttamente, applica la stessa trasformazione a tutti i record del file.
+
+L'obiettivo è arrivare ad avere lo stesso formato canonico indipendentemente dal fatto che il dato originale provenga dal CSV o dal JSON.
+
+4. Prima validazione
+
+Aggiungi alcuni semplici controlli prima della trasformazione.
+
+Per esempio, verifica la presenza dei campi fondamentali come identificativo e titolo e gestisci eventuali valori mancanti con un messaggio comprensibile, senza far terminare inaspettatamente il programma.
+
+Non serve implementare un sistema di validazione complesso in questa fase.
+
+5. Introduzione a FastAPI
+
+Una volta completati i punti precedenti, crea un piccolo servizio FastAPI.
+
+Come riferimento utilizza il tutorial ufficiale:
+FastAPI – First Steps fastapi.tiangolo.com
+
+Per questa settimana è sufficiente arrivare ad avere:
+
+GET /records → restituisce i record trasformati nel canonical model
+
+Prova inoltre le API attraverso la documentazione interattiva /docs generata automaticamente da FastAPI. fastapi.tiangolo.com
+
+
+
+Risultato atteso a fine settimana
+Alla fine della settimana dovresti riuscire a:
+
+leggere i sample CSV e JSON con Python;
+trasformare i record nel canonical model fornito;
+effettuare alcune semplici validazioni;
+avviare FastAPI;
+visualizzare  /records;
+
+Quando vuoi condividere una versione del lavoro, puoi inviarci semplicemente un file ZIP via email contenente il progetto.
+
+Ti consiglio anche di aggiungere un piccolo README.txt o README.md con le istruzioni necessarie per installare le dipendenze e avviare il progetto. Questo ci permetterà di testare facilmente il lavoro.
+
+Non è necessario completare tutto velocemente: l'obiettivo principale della prima settimana è capire bene il flusso dei dati e acquisire familiarità con Python e FastAPI.
+
+Per qualsiasi dubbio o problema, puoi chiederci o inviarci via email il codice su cui stai lavorando insieme a una breve descrizione del problema.
+
+Buon lavoro!

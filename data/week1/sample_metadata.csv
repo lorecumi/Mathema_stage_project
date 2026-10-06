@@ -1,0 +1,7 @@
+inventory_id,title,object_type,material,technique,period,date_from,date_to,place,description,condition,image_file
+OBJ-001,Marble funerary relief,relief,marble,carving,Roman Imperial,150,200,Example City,Fragmentary relief showing two standing figures.,good,images/OBJ-001.jpg
+OBJ-002,Painted ceramic vessel,vessel,ceramic,wheel-thrown; painted,Hellenistic,-250,-150,Example Site A,Small vessel with geometric painted decoration.,fair,images/OBJ-002.jpg
+OBJ-003,Bronze coin,coin,bronze,struck,Late Roman,350,400,Example Site B,Bronze coin with portrait on obverse and standing figure on reverse.,worn,images/OBJ-003.jpg
+OBJ-004,Mosaic fragment,mosaic,stone; mortar,tessellated,Roman,100,250,Example Building 2,Floor mosaic fragment with black-and-white geometric motif.,fragmentary,images/OBJ-004.jpg
+OBJ-005,Decorated wooden panel,architectural element,wood,carved; painted,Renaissance,1500,1550,Example Hall,Carved panel with floral decoration and traces of pigment.,stable,images/OBJ-005.jpg
+OBJ-006,Stone inscription fragment,inscription,limestone,incised,Roman,50,150,Example Site C,Inscribed stone fragment preserving four partial lines of text.,fair,images/OBJ-006.jpg

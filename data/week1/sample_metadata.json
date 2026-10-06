@@ -1,0 +1,89 @@
+{
+  "dataset": "Training Cultural Heritage Sample",
+  "records": [
+    {
+      "inventory_id": "OBJ-001",
+      "title": "Marble funerary relief",
+      "object_type": "relief",
+      "material": "marble",
+      "technique": "carving",
+      "period": "Roman Imperial",
+      "date_from": "150",
+      "date_to": "200",
+      "place": "Example City",
+      "description": "Fragmentary relief showing two standing figures.",
+      "condition": "good",
+      "image_file": "images/OBJ-001.jpg"
+    },
+    {
+      "inventory_id": "OBJ-002",
+      "title": "Painted ceramic vessel",
+      "object_type": "vessel",
+      "material": "ceramic",
+      "technique": "wheel-thrown; painted",
+      "period": "Hellenistic",
+      "date_from": "-250",
+      "date_to": "-150",
+      "place": "Example Site A",
+      "description": "Small vessel with geometric painted decoration.",
+      "condition": "fair",
+      "image_file": "images/OBJ-002.jpg"
+    },
+    {
+      "inventory_id": "OBJ-003",
+      "title": "Bronze coin",
+      "object_type": "coin",
+      "material": "bronze",
+      "technique": "struck",
+      "period": "Late Roman",
+      "date_from": "350",
+      "date_to": "400",
+      "place": "Example Site B",
+      "description": "Bronze coin with portrait on obverse and standing figure on reverse.",
+      "condition": "worn",
+      "image_file": "images/OBJ-003.jpg"
+    },
+    {
+      "inventory_id": "OBJ-004",
+      "title": "Mosaic fragment",
+      "object_type": "mosaic",
+      "material": "stone; mortar",
+      "technique": "tessellated",
+      "period": "Roman",
+      "date_from": "100",
+      "date_to": "250",
+      "place": "Example Building 2",
+      "description": "Floor mosaic fragment with black-and-white geometric motif.",
+      "condition": "fragmentary",
+      "image_file": "images/OBJ-004.jpg"
+    },
+    {
+      "inventory_id": "OBJ-005",
+      "title": "Decorated wooden panel",
+      "object_type": "architectural element",
+      "material": "wood",
+      "technique": "carved; painted",
+      "period": "Renaissance",
+      "date_from": "1500",
+      "date_to": "1550",
+      "place": "Example Hall",
+      "description": "Carved panel with floral decoration and traces of pigment.",
+      "condition": "stable",
+      "image_file": "images/OBJ-005.jpg"
+    },
+    {
+      "inventory_id": "OBJ-006",
+      "title": "Stone inscription fragment",
+      "object_type": "inscription",
+      "material": "limestone",
+      "technique": "incised",
+      "period": "Roman",
+      "date_from": "50",
+      "date_to": "150",
+      "place": "Example Site C",
+      "description": "Inscribed stone fragment preserving four partial lines of text.",
+      "condition": "fair",
+      "image_file": "images/OBJ-006.jpg"
+    }
+  ]
+}

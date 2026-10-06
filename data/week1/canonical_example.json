@@ -1,0 +1,34 @@
+{
+  "id": "OBJ-001",
+  "type": "heritage-object",
+  "title": "Marble funerary relief",
+  "description": "Fragmentary relief showing two standing figures.",
+  "classification": {
+    "objectType": "relief",
+    "materials": [
+      "marble"
+    ],
+    "techniques": [
+      "carving"
+    ]
+  },
+  "temporal": {
+    "period": "Roman Imperial",
+    "fromYear": 150,
+    "toYear": 200
+  },
+  "location": {
+    "label": "Example City"
+  },
+  "condition": "good",
+  "digitalResources": [
+    {
+      "type": "image",
+      "uri": "images/OBJ-001.jpg"
+    }
+  ],
+  "source": {
+    "originalId": "OBJ-001",
+    "dataset": "Training Cultural Heritage Sample"
+  }
+}

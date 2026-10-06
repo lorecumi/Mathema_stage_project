@@ -1,0 +1,126 @@
+{
+  "title": "Simple Heritage Object Canonical Model",
+  "description": "Training model for normalizing heterogeneous cultural-heritage metadata. It is intentionally simple and is not a formal domain standard.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "classification",
+    "source"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier for the normalized object."
+    },
+    "type": {
+      "const": "heritage-object"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "objectType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "techniques": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "temporal": {
+      "type": "object",
+      "properties": {
+        "period": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fromYear": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "toYear": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "digitalResources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "uri"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "originalId",
+        "dataset"
+      ],
+      "properties": {
+        "originalId": {
+          "type": "string"
+        },
+        "dataset": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
