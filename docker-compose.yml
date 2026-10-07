@@ -1,0 +1,18 @@
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: Lore.Cumi_Progetto_Mathema
+    restart: always
+    environment:
+      MYSQL_DATABASE: Lore.Cumi_Progetto_Mathema.DB
+      MYSQL_ROOT_PASSWORD: pippo
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: pippo
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
