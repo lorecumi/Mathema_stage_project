@@ -46,7 +46,7 @@ def show_all():
     return dataset_unico
 
 @app.get("/records/{record_id}")
-def show_id(record_id = str):
+def show_id(record_id: str):
     for r in dataset_unico:
         if r["id"] == record_id:
             return r
