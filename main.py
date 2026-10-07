@@ -14,7 +14,7 @@ with open("data/week1/sample_metadata.csv", mode="r", encoding="utf-8") as file:
     dati_csv = list(reader)
 
 #Elaborazine dati secondo il modello canonico
-#print("JSON TO CANON")
+# print("JSON TO CANON")
 records_canonici_json = []
 
 for r in dati_json["records"]:
