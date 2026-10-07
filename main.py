@@ -1,7 +1,7 @@
 import utilities
 import json
 import csv
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 
 
@@ -14,7 +14,7 @@ with open("data/week1/sample_metadata.csv", mode="r", encoding="utf-8") as file:
     dati_csv = list(reader)
 
 #Elaborazine dati secondo il modello canonico
-print("JSON TO CANON")
+#print("JSON TO CANON")
 records_canonici_json = []
 
 for r in dati_json["records"]:
@@ -22,7 +22,7 @@ for r in dati_json["records"]:
     records_canonici_json.append(converted_json)
 
 
-print("CSV TO CANON")
+#print("CSV TO CANON")
 records_canonici_csv = []
 
 for r in dati_csv:
@@ -44,3 +44,10 @@ def dataset():
 @app.get("/records")
 def show_all():
     return dataset_unico
+
+@app.get("/records/{record_id}")
+def show_id(record_id = str):
+    for r in dataset_unico:
+        if r["id"] == record_id:
+            return r
+    raise HTTPException(status_code=404, detail=f"ID '{record_id}' non trovato")

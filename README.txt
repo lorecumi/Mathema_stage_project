@@ -1,2 +1,3 @@
 Crea il virtual Environment, installa i requirements
-Enjoy
+LANCIARE IL SERVER: uvicorn main:app --reload
+Enjoygit
