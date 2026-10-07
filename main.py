@@ -30,6 +30,9 @@ for r in dati_csv:
     records_canonici_csv.append(converted_csv)
 
 
+
+
+
 #Merging dei dati e print
 dataset_unico = records_canonici_json + records_canonici_csv
 # print(json.dumps(dataset_unico, indent=4))

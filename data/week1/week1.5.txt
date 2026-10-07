@@ -6,7 +6,7 @@ Prima di considerare conclusa questa parte, ti chiederei alcune piccole integraz
 
 /verifica che l'output di raw_to_canon() corrisponda esattamente alla struttura definita nel canonical_example.json e nel relativo schema, per esempio digitalResources dovrebbe essere una lista;
 /aggiungi una semplice validazione dei campi obbligatori, almeno inventory_id e title, se non ci sono aggiungi un messaggio come "inventory_id mancante";
-rivedi la gestione degli errori in string_to_int() per dare indietro sia ValueError che TypeError;
+/rivedi la gestione degli errori in string_to_int() per dare indietro sia ValueError che TypeError;
 /correggi la dichiarazione del parametro in /records/{record_id} utilizzando record_id: str invece di record_id = str;
 aggiungi un breve README.md con le istruzioni per installare le dipendenze e avviare il progetto.
 aggiungi un semplice controllo dei duplicati: se un record è già stato acquisito da una sorgente, non deve essere inserito una seconda volta quando viene letto dall'altra. Puoi usare l'inventory_id come identificativo;

@@ -1,11 +1,9 @@
 #Conversione e controllo dei dati
-def string_to_int(value):
+def string_to_int(value, default: None):
     try:
         return int(value)
-    except ValueError:
-        return ValueError
-    except TypeError:
-        return TypeError
+    except (ValueError, TypeError):
+        return default
 
 def parse_type(source_rec: dict) -> dict:
     uri = source_rec.get("image_file")
@@ -13,6 +11,7 @@ def parse_type(source_rec: dict) -> dict:
         return uri.rsplit(".",1)[-1]
 
 def raw_to_canon(source_rec: dict) -> dict:
+
     record_id = source_rec.get("inventory_id")
     record_title = source_rec.get("title")
 
@@ -21,7 +20,6 @@ def raw_to_canon(source_rec: dict) -> dict:
 
     if not record_title:
         raise ValueError("Title not valid. Obligatory field")
-    
     
     canonical = {
         "id": record_id,
