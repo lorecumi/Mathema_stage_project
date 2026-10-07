@@ -15,25 +15,30 @@ def raw_to_canon(source_rec: dict) -> dict:
         "id": source_rec.get("inventory_id"),
         "title": source_rec.get("title"),
         "description": source_rec.get("description"),
-        "classification": 
-        {
+        "classification": [
+            {
             "object_type": source_rec.get("object_type"),
             "materials": source_rec.get("material"),
             "techniques": source_rec.get("technique"),
-        },
-        "temporal": {
+            }
+        ],
+        "temporal": [
+            {
             "period": source_rec.get("period"),
             "fromYear": string_to_int(source_rec.get("date_from")),
             "toYear": string_to_int(source_rec.get("date_to")),
-        },
+            }
+        ],
         "location":{
             "label": source_rec.get("place"),
         },
         "condition": source_rec.get("condition"),
-        "digitalResources": {
+        "digitalResources": [
+            {
             "type": parse_type(source_rec),
             "uri": source_rec.get("image_file")
-        }  
+            }
+        ] 
     }
     return canonical
 
