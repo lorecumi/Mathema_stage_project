@@ -1,0 +1,21 @@
+Ciao Lorenzo,
+
+ho dato un'occhiata al lavoro fatto finora: la struttura è buona e le parti principali richieste sono già presenti, in particolare la lettura di CSV/JSON, la trasformazione dei dati, la separazione della logica in utilities.py e le prime API con FastAPI.
+
+Prima di considerare conclusa questa parte, ti chiederei alcune piccole integrazioni/correzioni:
+
+verifica che l'output di raw_to_canon() corrisponda esattamente alla struttura definita nel canonical_example.json e nel relativo schema, per esempio digitalResources dovrebbe essere una lista;
+aggiungi una semplice validazione dei campi obbligatori, almeno inventory_id e title, se non ci sono aggiungi un messaggio come "inventory_id mancante";
+rivedi la gestione degli errori in string_to_int() per dare indietro sia ValueError che TypeError;
+correggi la dichiarazione del parametro in /records/{record_id} utilizzando record_id: str invece di record_id = str;
+aggiungi un breve README.md con le istruzioni per installare le dipendenze e avviare il progetto.
+aggiungi un semplice controllo dei duplicati: se un record è già stato acquisito da una sorgente, non deve essere inserito una seconda volta quando viene letto dall'altra. Puoi usare l'inventory_id come identificativo;
+Come ultimo step della settimana, solo dopo aver sistemato quanto sopra, vorrei che facessi anche un primo esercizio con Django. Non è necessario integrarlo ancora con FastAPI.
+
+L'obiettivo è semplicemente installare Django, creare un nuovo progetto, avviare correttamente il development server e dare una prima occhiata alla struttura generata (settings.py, urls.py, manage.py, ecc.). Puoi partire dal tutorial ufficiale:
+
+Django – Writing your first Django app, part 1
+
+Per ora fermati alla creazione e all'avvio del progetto: utilizzeremo Django più avanti per introdurre la parte di persistenza e database.
+
+Quando hai completato questi punti, puoi inviarmi nuovamente il progetto.
