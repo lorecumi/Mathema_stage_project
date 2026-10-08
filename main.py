@@ -2,6 +2,7 @@ import utilities
 import json
 import csv
 from fastapi import FastAPI, HTTPException
+import django
 
 
 
@@ -20,6 +21,7 @@ records_canonici_json = []
 for r in dati_json["records"]:
     converted_json = utilities.raw_to_canon(r)
     records_canonici_json.append(converted_json)
+
 
 
 #print("CSV TO CANON")
