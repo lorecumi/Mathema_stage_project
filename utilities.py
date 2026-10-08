@@ -1,5 +1,5 @@
 #Conversione e controllo dei dati
-def string_to_int(value, default: None):
+def string_to_int(value, default = None):
     try:
         return int(value)
     except (ValueError, TypeError):
