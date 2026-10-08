@@ -12,4 +12,6 @@ activate venv:
     pip install -r requirements.txt
 
 Launch server:
-    uvicorn main:app --reload
+    python -m uvicorn main:app --reload
+Shut down:
+    Ctrl + C
