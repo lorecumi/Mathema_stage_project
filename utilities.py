@@ -52,3 +52,14 @@ def raw_to_canon(source_rec: dict) -> dict:
     }
     return canonical
 
+
+def duplicates_check(list_1, list_2):
+    controlled_id=set()
+    clean_records=[]
+
+    for i in list_1 + list_2:
+        data_id=i["id"]
+        if data_id not in controlled_id:
+            controlled_id.add(data_id)
+            clean_records.append(i)
+    return clean_records
