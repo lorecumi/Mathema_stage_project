@@ -42,7 +42,7 @@ dataset_unico = utilities.duplicates_check(records_canonici_json, records_canoni
 
 app=FastAPI()
 
-@app.get("/")
+@app.get("/health")
 def dataset():
     return {"status": "ok"}
 

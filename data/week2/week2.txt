@@ -1,0 +1,129 @@
+Ciao Lorenzo,
+
+ho visto gli ultimi aggiornamenti e direi che il lavoro sta procedendo bene! Hai completato le principali attività della prima settimana e possiamo iniziare con la fase successiva.
+
+Prima di procedere, ti chiederei solo di verificare che:
+
+- L'output rispetti esattamente il canonical model fornito (in particolare classification e temporal sono diventati liste, ma nel modello canonico previsto sono oggetti, inoltre rimangono differenze nei nomi e nei tipi dei campi, e mancano type e source)
+
+/- Aggiungere /health nel posto di usare solo "/" 
+
+- Forse arricchire di piu il README. 
+
+- Sarebbe utile gestire i record non validi senza interrompere l'elaborazione dell'intero file.
+
+
+
+Per quanto riguarda Django, ottimo che tu abbia già iniziato a sperimentare! Ti anticipo i task della seconda settimana, vorrei concentrarci sulla gestione e persistenza dei dati, collegando progressivamente quanto hai già sviluppato con FastAPI.
+
+
+
+Ad ogni modo, vorrei anche organizzare un incontro la prossima settimana in cui potrai presentarci ciò che hai fatto finora, questo e un'ulteriore competenza da acquisire.
+
+ 
+
+Ti propongo di procedere con queste attività, nell'ordine indicato.
+
+1. Creazione di una prima API Django
+
+Partendo dal progetto Django che hai già sperimentato, crea un'applicazione chiamata, ad esempio, records, e installa Django REST Framework.
+
+Come primo esercizio, crea un endpoint:
+
+POST /api/records/ – riceve un singolo oggetto JSON nel formato canonico e lo restituisce come risposta.
+
+Per ora non è necessario salvare nulla nel database. L'obiettivo è capire come Django riceve una richiesta HTTP POST, legge il JSON e restituisce una risposta.
+
+Puoi iniziare testando l'endpoint manualmente con un record preso da canonical_example.json.
+
+Tutorial: https://www.django-rest-framework.org/tutorial/1-serialization/
+
+2. Validazione dei dati ricevuti
+
+Una volta funzionante l'endpoint, aggiungi una semplice validazione utilizzando i serializers di Django REST Framework.
+
+Inizia verificando la presenza dei campi obbligatori, almeno id e title. Se mancano, l'API deve restituire un errore HTTP 400 con un messaggio comprensibile.
+
+Risultato atteso: Django riceve un JSON, verifica i campi principali e restituisce una risposta corretta o un messaggio di errore.
+
+3. Introduzione al database e a JSONField
+
+Ora puoi creare un modello Django chiamato HeritageRecord, che permetta di salvare:
+
+l'identificativo univoco del record;
+
+il titolo;
+
+il record canonico completo attraverso un campo JSONField.
+
+JSONField permette di conservare un oggetto JSON nel database mantenendo la sua struttura, comprese le proprietà annidate e le liste. In questo modo non dobbiamo creare subito una colonna per ogni campo del canonical model.
+
+Per iniziare puoi utilizzare SQLite, già supportato da Django.
+
+Crea le migrazioni e modifica l'endpoint POST affinché salvi il record ricevuto nel database, evitando l'inserimento di ID duplicati.
+
+Tutorial: https://docs.djangoproject.com/en/6.0/ref/models/fields/#jsonfield
+
+4. Recupero dei dati salvati
+
+Aggiungi due endpoint:
+
+GET /api/records/ – restituisce tutti i record salvati;
+
+GET /api/records/{id}/ – restituisce il record con l'identificativo richiesto.
+
+Verifica anche che i dati rimangano disponibili dopo aver riavviato il server Django.
+
+5. Collegamento tra FastAPI e Django
+
+A questo punto puoi riprendere il progetto della prima settimana.
+
+Attualmente FastAPI legge i file CSV/JSON e li trasforma nel canonical model. Vorrei che provassi a collegarlo alle API Django, in modo da inviare i record trasformati tramite richieste HTTP POST e salvarli nel database.
+
+Puoi utilizzare la libreria Python requests per effettuare le chiamate HTTP.
+
+Per questa prima versione è sufficiente che il trasferimento avvenga tramite uno script o una funzione dedicata. Non è ancora necessario implementare l'upload dei file attraverso un'interfaccia.
+
+Risultato atteso: leggere un file con FastAPI, trasformare i record, inviarli a Django e ritrovarli nel database.
+
+6. Test e documentazione
+
+Prima di considerare completata questa fase, verifica almeno questi casi:
+
+un record valido viene salvato correttamente;
+
+un record duplicato non viene inserito nuovamente;
+
+un record con campi obbligatori mancanti genera un errore comprensibile;
+
+un record inesistente richiesto tramite GET restituisce HTTP 404;
+
+i dati rimangono disponibili dopo il riavvio del server.
+
+Aggiorna inoltre il README con le istruzioni per avviare entrambi i servizi e testare le API.
+
+7. Attività aggiuntive (se completi tutto in anticipo)
+
+Se termini le attività principali, puoi continuare con alcune estensioni:
+
+sostituire SQLite con MySQL;
+
+aggiungere a FastAPI un endpoint per caricare direttamente file CSV/JSON;
+
+scrivere alcuni test automatici per le API Django;
+
+aggiungere un riepilogo del numero di record importati, duplicati e non validi.
+
+Queste attività sono facoltative e puoi affrontarle nell'ordine che preferisci, dopo aver completato quelle principali.
+
+
+
+L'obiettivo di questa settimana è comprendere come lavorano insieme FastAPI, Django e il database, passando dalla semplice elaborazione di file alla persistenza dei dati.
+
+Puoi procedere autonomamente seguendo questi step e, se completi tutto prima del previsto, iniziare dalle attività aggiuntive senza dover aspettare la prossima consegna.
+
+Buon lavoro!
+
+Saluti,
+
+Doaa
