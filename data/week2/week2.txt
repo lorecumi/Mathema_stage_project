@@ -10,7 +10,7 @@ Prima di procedere, ti chiederei solo di verificare che:
 
 - Forse arricchire di piu il README. 
 
-- Sarebbe utile gestire i record non validi senza interrompere l'elaborazione dell'intero file.
+/- Sarebbe utile gestire i record non validi senza interrompere l'elaborazione dell'intero file.
 
 
 

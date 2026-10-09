@@ -20,16 +20,22 @@ dataset_name = dati_json.get("dataset")
 records_canonici_json = []
 
 for r in dati_json["records"]:
-    converted_json = utilities.raw_to_canon(r, dataset_name)
-    records_canonici_json.append(converted_json)
+    try:
+        converted_json = utilities.raw_to_canon(r, dataset_name)
+        records_canonici_json.append(converted_json)
+    except ValueError as e:
+        print(f"Error: Record {e} has been skipped.")
 
 
 #print("CSV TO CANON")
 records_canonici_csv = []
 
 for r in dati_csv:
-    converted_csv = utilities.raw_to_canon(r)
-    records_canonici_csv.append(converted_csv)
+    try:
+        converted_csv = utilities.raw_to_canon(r)
+        records_canonici_csv.append(converted_csv)
+    except ValueError as e:
+        print(f"Error: Record {e} has been skipped.")
 
 
 
