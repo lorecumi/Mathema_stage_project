@@ -3,7 +3,7 @@
     pip
 
 -Installation on windows:
-creater a venv in the project folder:
+create a venv in the project folder:
     python -m venv venv
 activate venv:
     venv\Scripts\Activate.ps1
@@ -11,7 +11,7 @@ activate venv:
 -Install requirements.txt
     pip install -r requirements.txt
 
-Launch server:
+-Launch server:
     python -m uvicorn main:app --reload
-Shut down:
+-Shut down:
     Ctrl + C
