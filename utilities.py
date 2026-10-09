@@ -14,14 +14,14 @@ def required_check(value, name: str):
     if not value:
         raise ValueError(f"Error: '{name}' is an obligatory field!")
 
-def raw_to_canon(source_rec: dict) -> dict:
+def raw_to_canon(source_rec: dict, dataset_name: str = None) -> dict:
 
     record_id = source_rec.get("inventory_id")
     record_type = source_rec.get("object_type")
     record_title = source_rec.get("title")
     record_materials = source_rec.get("material")
     record_techniques = source_rec.get("technique")
-    record_source = parse_type(source_rec)
+    record_sourcetype = parse_type(source_rec)
     record_uri = source_rec.get("image_file")
     
     required_check(record_id, "id")
@@ -29,7 +29,7 @@ def raw_to_canon(source_rec: dict) -> dict:
     required_check(record_title, "title")
     required_check(record_materials, "material")
     required_check(record_techniques, "technique")
-    required_check(record_source, "source")
+    required_check(record_sourcetype, "source")
     required_check(record_uri, "uri")
     
     canonical = {
@@ -52,10 +52,15 @@ def raw_to_canon(source_rec: dict) -> dict:
         "condition": source_rec.get("condition"),
         "digitalResources": [
             {
-            "type": record_source,
+            "type": record_sourcetype,
             "uri": record_uri
             }
-        ] 
+        ],
+        "source":{
+            "original_id": record_id,
+            "dataset": dataset_name
+        }
+
     }
     return canonical
 

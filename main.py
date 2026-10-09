@@ -16,12 +16,12 @@ with open("data/week1/sample_metadata.csv", mode="r", encoding="utf-8") as file:
 
 #Elaborazine dati secondo il modello canonico
 # print("JSON TO CANON")
+dataset_name = dati_json.get("dataset")
 records_canonici_json = []
 
 for r in dati_json["records"]:
-    converted_json = utilities.raw_to_canon(r)
+    converted_json = utilities.raw_to_canon(r, dataset_name)
     records_canonici_json.append(converted_json)
-
 
 
 #print("CSV TO CANON")

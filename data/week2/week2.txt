@@ -4,7 +4,7 @@ ho visto gli ultimi aggiornamenti e direi che il lavoro sta procedendo bene! Hai
 
 Prima di procedere, ti chiederei solo di verificare che:
 
-- L'output rispetti esattamente il canonical model fornito (in particolare classification e temporal sono diventati liste, ma nel modello canonico previsto sono oggetti, inoltre rimangono differenze nei nomi e nei tipi dei campi, e mancano type e source)
+/- L'output rispetti esattamente il canonical model fornito (in particolare classification e temporal sono diventati liste, ma nel modello canonico previsto sono oggetti, inoltre rimangono differenze nei nomi e nei tipi dei campi, e mancano type e source)
 
 /- Aggiungere /health nel posto di usare solo "/" 
 
