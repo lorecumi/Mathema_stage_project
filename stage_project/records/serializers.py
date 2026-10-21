@@ -16,3 +16,5 @@ class RecordSerializer(serializers.Serializer):
             "null": "Il campo 'title' non può essere null.",
         }
     )
+
+    
