@@ -2,7 +2,6 @@ import utilities
 import json
 import csv
 from fastapi import FastAPI, HTTPException
-import django
 
 
 
